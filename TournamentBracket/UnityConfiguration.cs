@@ -23,6 +23,7 @@ namespace TournamentBracket
             container.RegisterType<IRoundService, RoundService>();
             container.RegisterType<IMatchService, MatchService>();
             container.RegisterType<IEntrantService, EntrantService>();
+            container.RegisterType<IDivisionService, DivisionService>();
             container.RegisterInstance(AuthConfiguration.LazyConfig);            
             return container;
         }

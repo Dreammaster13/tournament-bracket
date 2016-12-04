@@ -28,6 +28,9 @@ namespace TournamentBracket.Data
         public IRepository<Models.Round> Rounds { get { return GetStandardRepo<Models.Round>(); } }
         public IRepository<Models.Entrant> Entrants { get { return GetStandardRepo<Models.Entrant>(); } }
         public IRepository<Models.Match> Matches { get { return GetStandardRepo<Models.Match>(); } }
+        public IRepository<Models.DigitalAsset> DigitalAssets { get { return GetStandardRepo<Models.DigitalAsset>(); } }
+        public IRepository<Models.Division> Divisions { get { return GetStandardRepo<Models.Division>(); } }
+
 
         protected void ConfigureDbContext(IDbContext dbContext)
         {

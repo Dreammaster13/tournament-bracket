@@ -13,6 +13,9 @@ namespace TournamentBracket.Data
         }
 
         public DbSet<Models.Round> Rounds { get; set; }
+        public DbSet<Models.Match> Matches { get; set; }
+        public DbSet<Models.Entrant> Entrants { get; set; }
+        public DbSet<Models.DigitalAsset> DigitalAssets { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {

@@ -14,7 +14,7 @@ namespace TournamentBracket.Migrations
 
         protected override void Seed(TournamentBracket.Data.DataContext context)
         {
-
+            EntrantConfiguration.Seed(context);
         }
     }
 }

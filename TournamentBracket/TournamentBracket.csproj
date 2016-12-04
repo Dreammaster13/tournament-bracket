@@ -194,6 +194,7 @@
     <Compile Include="Data\RepositoryFactories.cs" />
     <Compile Include="Data\RepositoryProvider.cs" />
     <Compile Include="Data\Uow.cs" />
+    <Compile Include="Dtos\DigitalAssetUploadResponseDto.cs" />
     <Compile Include="Dtos\RoundAddOrUpdateRequestDto.cs" />
     <Compile Include="Dtos\RoundAddOrUpdateResponseDto.cs" />
     <Compile Include="Dtos\RoundDto.cs" />
@@ -236,6 +237,24 @@
     <Compile Include="Services\IEntrantService.cs" />
     <Compile Include="Controllers\MatchController.cs" />
     <Compile Include="Controllers\EntrantController.cs" />
+    <Compile Include="Models\DigitalAsset.cs" />
+    <Compile Include="UploadHandlers\StreamHelper.cs" />
+    <Compile Include="UploadHandlers\FileMultipartFormDataStreamProvider.cs" />
+    <Compile Include="UploadHandlers\InMemoryMultipartFormDataStreamProvider.cs" />
+    <Compile Include="Controllers\DigitalAssetController.cs" />
+    <Compile Include="Dtos\DigitalAssetDto.cs" />
+    <Compile Include="Dtos\DigitalAssetAddOrUpdateRequestDto.cs" />
+    <Compile Include="Dtos\DigitalAssetAddOrUpdateResponseDto.cs" />
+    <Compile Include="Services\DigitalAssetService.cs" />
+    <Compile Include="Services\IDigitalAssetService.cs" />
+    <Compile Include="Migrations\EntrantConfiguration.cs" />
+    <Compile Include="Models\Division.cs" />
+    <Compile Include="Dtos\DivisionDto.cs" />
+    <Compile Include="Dtos\DivisionAddOrUpdateRequestDto.cs" />
+    <Compile Include="Dtos\DivisionAddOrUpdateResponseDto.cs" />
+    <Compile Include="Controllers\DivisionController.cs" />
+    <Compile Include="Services\DivisionService.cs" />
+    <Compile Include="Services\IDivisionService.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include=".gitignore" />
