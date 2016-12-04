@@ -1,5 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props')" />
   <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
   <Import Project="..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props" Condition="Exists('..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" />
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
@@ -24,6 +25,11 @@
     <UseGlobalApplicationHostFile />
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
+    <TypeScriptToolsVersion>2.0</TypeScriptToolsVersion>
+    <TypeScriptEmitDecoratorMetadata>true</TypeScriptEmitDecoratorMetadata>
+    <TypeScriptModuleKind>commonjs</TypeScriptModuleKind>
+    <TypeScriptExperimentalDecorators>True</TypeScriptExperimentalDecorators>
+    <TypeScritModuleResolution>Classic</TypeScritModuleResolution>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -68,6 +74,23 @@
   <ItemGroup>
     <Content Include="packages.config" />
     <Content Include=".gitignore" />
+    <Content Include="src\app\app.component.html">
+      <DependentUpon>app.component.ts</DependentUpon>
+    </Content>
+    <Content Include="src\app\app.component.scss">
+      <DependentUpon>app.component.ts</DependentUpon>
+    </Content>
+    <Content Include="src\app\bracket\bracket.component.html">
+      <DependentUpon>bracket.component.ts</DependentUpon>
+    </Content>
+    <Content Include="src\app\bracket\bracket.component.scss">
+      <DependentUpon>bracket.component.ts</DependentUpon>
+    </Content>
+    <Content Include="webpack.config.js" />
+    <Content Include="tsconfig.json" />
+    <Content Include="typedoc.json" />
+    <Content Include="typings.json" />
+    <Content Include="package.json" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -81,14 +104,77 @@
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
-    <Folder Include="src\app\" />
+    <TypeScriptCompile Include="src\app\app-router-outlet.component.ts" />
+    <TypeScriptCompile Include="src\app\environment.ts" />
+    <TypeScriptCompile Include="src\app\router\index.ts" />
+    <TypeScriptCompile Include="src\app\router\link.component.ts" />
+    <TypeScriptCompile Include="src\app\router\route.ts" />
+    <TypeScriptCompile Include="src\app\router\router-middleware.ts" />
+    <TypeScriptCompile Include="src\app\router\router-outlet.ts" />
+    <TypeScriptCompile Include="src\app\router\router.ts" />
+    <TypeScriptCompile Include="src\app\utilities\add-or-update.ts" />
+    <TypeScriptCompile Include="src\app\utilities\append-to-body-async.ts" />
+    <TypeScriptCompile Include="src\app\utilities\append-to-target-async.ts" />
+    <TypeScriptCompile Include="src\app\utilities\camel-case-to-snake-case.ts" />
+    <TypeScriptCompile Include="src\app\utilities\constants.ts" />
+    <TypeScriptCompile Include="src\app\utilities\create-element.ts" />
+    <TypeScriptCompile Include="src\app\utilities\debounce.ts" />
+    <TypeScriptCompile Include="src\app\utilities\extend-css-async.ts" />
+    <TypeScriptCompile Include="src\app\utilities\fetch.ts" />
+    <TypeScriptCompile Include="src\app\utilities\form-encode.ts" />
+    <TypeScriptCompile Include="src\app\utilities\guid.ts" />
+    <TypeScriptCompile Include="src\app\utilities\http.ts" />
+    <TypeScriptCompile Include="src\app\utilities\index.ts" />
+    <TypeScriptCompile Include="src\app\utilities\insert-after.ts" />
+    <TypeScriptCompile Include="src\app\utilities\is-array.ts" />
+    <TypeScriptCompile Include="src\app\utilities\is-numeric.ts" />
+    <TypeScriptCompile Include="src\app\utilities\load-style.ts" />
+    <TypeScriptCompile Include="src\app\utilities\log.ts" />
+    <TypeScriptCompile Include="src\app\utilities\logger.ts" />
+    <TypeScriptCompile Include="src\app\utilities\pluck-out.ts" />
+    <TypeScriptCompile Include="src\app\utilities\pluck.ts" />
+    <TypeScriptCompile Include="src\app\utilities\position.ts" />
+    <TypeScriptCompile Include="src\app\utilities\rectangle.ts" />
+    <TypeScriptCompile Include="src\app\utilities\remove-element.ts" />
+    <TypeScriptCompile Include="src\app\utilities\ruler.ts" />
+    <TypeScriptCompile Include="src\app\utilities\set-opacity-async.ts" />
+    <TypeScriptCompile Include="src\app\utilities\space.ts" />
+    <TypeScriptCompile Include="src\app\utilities\storage.ts" />
+    <TypeScriptCompile Include="src\app\utilities\store.ts" />
+    <TypeScriptCompile Include="src\app\utilities\target-value.ts" />
+    <TypeScriptCompile Include="src\app\utilities\template.ts" />
+    <TypeScriptCompile Include="src\app\utilities\translate-x.ts" />
+    <TypeScriptCompile Include="src\app\utilities\translate-xy.ts" />
+    <TypeScriptCompile Include="src\app\utilities\wait.ts" />
+    <TypeScriptCompile Include="src\custom-typings.d.ts" />
+    <TypeScriptCompile Include="src\main.ts" />
+    <TypeScriptCompile Include="src\app\app.component.ts" />
+    <TypeScriptCompile Include="src\app\entrants\entrant.service.ts" />
+    <TypeScriptCompile Include="src\app\entrants\index.ts" />
+    <TypeScriptCompile Include="src\app\entrants\entrant.model.ts" />
+    <TypeScriptCompile Include="src\app\matches\index.ts" />
+    <TypeScriptCompile Include="src\app\matches\match.model.ts" />
+    <TypeScriptCompile Include="src\app\matches\match.service.ts" />
+    <TypeScriptCompile Include="src\app\rounds\index.ts" />
+    <TypeScriptCompile Include="src\app\rounds\round.model.ts" />
+    <TypeScriptCompile Include="src\app\rounds\round.service.ts" />
+    <TypeScriptCompile Include="src\app\index.ts" />
+    <TypeScriptCompile Include="src\app\bracket\index.ts" />
+    <TypeScriptCompile Include="src\app\bracket\bracket.model.ts" />
+    <TypeScriptCompile Include="src\app\bracket\bracket.service.ts" />
+    <TypeScriptCompile Include="src\app\bracket\bracket.component.ts" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
   </PropertyGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets')" />
   <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
   <ProjectExtensions>
